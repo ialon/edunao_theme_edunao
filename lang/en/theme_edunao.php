@@ -37,3 +37,5 @@ $string['display_category_title'] = 'Display category title';
 $string['display_category_title_desc'] = 'Select whether to display the category titles in the My Profile page.';
 $string['restrict_preferences'] = 'Restrict access to preferences page';
 $string['restrict_preferences_desc'] = 'Removes links to Preferences page and redirects users to My Profile page if they try to access it directly (except admins)';
+$string['hide_breadcrumbs'] = 'Hide breadcrumbs';
+$string['hide_breadcrumbs_desc'] = 'Hide breadcrumbs in the header of the page.';
