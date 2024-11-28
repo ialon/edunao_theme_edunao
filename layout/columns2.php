@@ -135,7 +135,7 @@ require_once(__DIR__ . '/../../boost_union/layout/includes/javascriptdisabledhin
 require_once(__DIR__ . '/../../boost_union/layout/includes/infobanners.php');
 
 // Include the template content for the navbar.
-require_once(__DIR__ . '/../../boost_union/layout/includes/navbar.php');
+require_once(__DIR__ . '/includes/navbar.php');
 
 // Include the template content for the smart menus.
 require_once(__DIR__ . '/../../boost_union/layout/includes/smartmenus.php');
