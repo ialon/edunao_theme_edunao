@@ -55,7 +55,7 @@ class primary extends \theme_boost_union\output\navigation\primary {
         // Remove link to preferences page
         $restrict = get_config('theme_edunao', 'restrict_preferences');
 
-        if (!is_siteadmin() && $restrict) {
+        if (!is_siteadmin() && (isset($parentoutput) && isset($parentoutput['items'])) && $restrict) {
             $newitems = [];
             foreach ($parentoutput['items'] as $key => $item) {
                 if ($item->itemtype == 'link' && $item->titleidentifier == 'preferences,moodle') {
