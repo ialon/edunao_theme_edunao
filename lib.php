@@ -1,4 +1,5 @@
 <?php
+
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -22,18 +23,25 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+// This line protects the file from being accessed by a URL directly.                                                               
 defined('MOODLE_INTERNAL') || die();
 
-// General.
-$string['pluginname'] = 'Edunao';
-$string['choosereadme'] = 'Theme Edunao is a simplified child theme of Boost Union.';
-$string['configtitle'] = 'Edunao';
-$string['generalsettings'] = 'General Settings';
+/**
+ * Callback immediately after require_login succeeds.
+ *
+ * This is an implementation of a legacy callback that will only be called in older Moodle versions.
+ * It will not be called in Moodle 4.4+ that contain the hook core\hook\output\before_http_headers,
+ */
+function theme_edunao_after_require_login() {
+    global $SERVER;
 
-// Settings: General strings.
-$string['myprofile_categories'] = 'My profile categories';
-$string['myprofile_categories_desc'] = 'Select the categories you want to display in the My Profile page.';
-$string['display_category_title'] = 'Display category title';
-$string['display_category_title_desc'] = 'Select whether to display the category titles in the My Profile page.';
-$string['restrict_preferences'] = 'Restrict access to preferences page';
-$string['restrict_preferences_desc'] = 'Removes links to Preferences page and redirects users to My Profile page if they try to access it directly (except admins)';
+    $url = $_SERVER['PHP_SELF'];
+    
+    if ($url == '/user/preferences.php') {
+        $restrict = get_config('theme_edunao', 'restrict_preferences');
+
+        if (!is_siteadmin() && $restrict) {
+            redirect('/user/profile.php');
+        }
+    }
+}
