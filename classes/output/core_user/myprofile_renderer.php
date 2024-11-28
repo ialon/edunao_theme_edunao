@@ -27,11 +27,51 @@ namespace theme_edunao\output\core_user;
 
 use \core_user\output\myprofile\renderer;
 use \core_user\output\myprofile\category;
+use \core_user\output\myprofile\node;
+use \core_user\output\myprofile\tree;
 
 // This line protects the file from being accessed by a URL directly.                                                               
 defined('MOODLE_INTERNAL') || die();
 
 class myprofile_renderer extends renderer {
+    /**
+     * Render the whole tree.
+     *
+     * @param tree $tree
+     *
+     * @return string
+     */
+    public function render_tree(tree $tree) {
+        global $SITE, $USER;
+
+        // Add a change password link.
+        $systemcontext = \context_system::instance();
+
+        $userauthplugin = false;
+        if (!empty($USER->auth)) {
+            $userauthplugin = get_auth_plugin($USER->auth);
+        }
+
+        if ($userauthplugin && !\core\session\manager::is_loggedinas() && !isguestuser() &&
+            has_capability('moodle/user:changeownpassword', $systemcontext) && $userauthplugin->can_change_password()) {
+            $passwordchangeurl = $userauthplugin->change_password_url();
+            if (empty($passwordchangeurl)) {
+                $passwordchangeurl = new \moodle_url('/login/change_password.php', array('id'=>$SITE->id));
+            }
+            $node = new node('contact', 'changepassword', get_string('changepassword'), null, $passwordchangeurl, null, null, 'changepassword');
+            $tree->add_node($node);
+            $tree->categories['contact']->add_node($node);
+        }
+
+        $return = \html_writer::start_tag('div', array('class' => 'profile_tree'));
+        $categories = $tree->categories;
+        foreach ($categories as $category) {
+            $return .= $this->render($category);
+        }
+        $return .= \html_writer::end_tag('div');
+        return $return;
+    }
+
     /**
      * Render a category.
      *
