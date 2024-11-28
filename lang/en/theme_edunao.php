@@ -27,3 +27,11 @@ defined('MOODLE_INTERNAL') || die();
 // General.
 $string['pluginname'] = 'Edunao';
 $string['choosereadme'] = 'Theme Edunao is a simplified child theme of Boost Union.';
+$string['configtitle'] = 'Edunao';
+$string['generalsettings'] = 'General Settings';
+
+// Settings: General strings.
+$string['myprofile_categories'] = 'My profile categories';
+$string['myprofile_categories_desc'] = 'Select the categories you want to display in the My Profile page.';
+$string['display_category_title'] = 'Display category title';
+$string['display_category_title_desc'] = 'Select whether to display the category titles in the My Profile page.';
