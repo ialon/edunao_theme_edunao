@@ -61,5 +61,13 @@ if (!during_initial_install() && $ADMIN->fulltree) {
     $page->add($setting);
 
 
+    // Restrict access to preferences page
+    $name = 'theme_edunao/restrict_preferences';
+    $title = get_string('restrict_preferences', 'theme_edunao');
+    $description = get_string('restrict_preferences_desc', 'theme_edunao');
+    $setting = new admin_setting_configselect($name, $title, $description, 1, $yesnooption);
+    $page->add($setting);
+
+
     $settings->add($page);
 }
