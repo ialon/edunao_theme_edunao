@@ -77,5 +77,13 @@ if (!during_initial_install() && $ADMIN->fulltree) {
     $page->add($setting);
 
 
+    // Hide main navigation bar
+    $name = 'theme_edunao/hide_mainnavbar';
+    $title = get_string('hide_mainnavbar', 'theme_edunao');
+    $description = get_string('hide_mainnavbar_desc', 'theme_edunao');
+    $setting = new admin_setting_configselect($name, $title, $description, 1, $yesnooption);
+    $page->add($setting);
+
+
     $settings->add($page);
 }
