@@ -31,9 +31,13 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
      * @return string the HTML for the navbar.
      */
     public function navbar(): string {
+        global $SERVER;
+    
+        $url = $_SERVER['PHP_SELF'];
+
         $hide = get_config('theme_edunao', 'hide_breadcrumbs');
 
-        if ($hide) {
+        if ($hide && str_contains($url, "/user/")) {
             return '';
         } else {
             return parent::navbar();
