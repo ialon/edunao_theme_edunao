@@ -44,7 +44,7 @@ if (!during_initial_install() && $ADMIN->fulltree) {
     $name = 'theme_edunao/myprofile_categories';
     $title = get_string('myprofile_categories', 'theme_edunao');
     $description = get_string('myprofile_categories_desc', 'theme_edunao');
-    $setting = new admin_setting_configmulticheckbox($name, $title, $description, ['contact' => 1], $categories);
+    $setting = new admin_setting_configmulticheckbox($name, $title, $description, ['contact' => 1, 'mycertificates' => 1], $categories);
     $page->add($setting);
 
 
