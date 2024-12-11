@@ -41,3 +41,6 @@ $string['hide_breadcrumbs'] = 'Masquer les fil d\'Ariane';
 $string['hide_breadcrumbs_desc'] = 'Masquer les fil d\'Ariane dans l\'en-tête de la page de profil.';
 $string['hide_mainnavbar'] = 'Masquer la barre de navigation principale';
 $string['hide_mainnavbar_desc'] = 'Masquer la barre de navigation principale dans l\'en-tête de la page.';
+
+// My certificates.
+$string['mycertificates'] = 'Mes certificats';

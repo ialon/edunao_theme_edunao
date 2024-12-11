@@ -41,3 +41,9 @@ $string['hide_breadcrumbs'] = 'Hide breadcrumbs';
 $string['hide_breadcrumbs_desc'] = 'Hide breadcrumbs in the header of the profile page.';
 $string['hide_mainnavbar'] = 'Hide main navigation bar';
 $string['hide_mainnavbar_desc'] = 'Hide the main navigation bar in the header of the page.';
+
+// My certificates.
+$string['mycertificates'] = 'My certificates';
+$string['thumbnail'] = 'Thumbnail';
+$string['nameandtime'] = 'Name and date issued';
+$string['courselink'] = 'Course link';

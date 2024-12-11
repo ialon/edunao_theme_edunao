@@ -25,7 +25,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'theme_edunao';
-$plugin->version = 2023102050;
+$plugin->version = 2023102051;
 $plugin->release = 'v4.3-r19';
 $plugin->requires = 2023100900;
 $plugin->supported = [403, 403];

@@ -22,6 +22,31 @@
     border: none;
 }
 
+/* Style course image thumbnail */
+.userprofile .course-thumbnail {
+    width: 200px;
+    height: 90px;
+    background-position: center;
+    background-size: cover;
+    border-radius: calc(0.5rem - 1px);
+}
+
+/* Style certificate name */
+.mycertificates .cert-name {
+    font-weight: bold;
+}
+
+/* Style action icons */
+.table td.icon {
+    vertical-align: middle;
+    padding: .75rem 0.25rem;
+}
+
+/* Make LinkedIn icon larger */
+.mycertificates .fa-linkedin-square {
+    font-size: 20px;
+}
+
 
 /*
 *  DASHBOARD

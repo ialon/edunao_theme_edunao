@@ -45,3 +45,44 @@ function theme_edunao_after_require_login() {
         }
     }
 }
+
+function theme_edunao_myprofile_navigation(core_user\output\myprofile\tree $tree, $user, $iscurrentuser, $course) {
+    global $USER;
+
+    // Check that we have a valid user.
+    $user = \core_user::get_user($user->id, '*', MUST_EXIST);
+
+    // Create the category.
+    $categoryname = get_string('mycertificates', 'theme_edunao');
+    $category = new core_user\output\myprofile\category('mycertificates', $categoryname, 'contact');
+    $tree->add_category($category);
+
+    // If we are viewing certificates that are not for the currently logged in user then do a capability check.
+    if (($user->id != $USER->id) && !\tool_certificate\permission::can_view_list($user->id)) {
+        return;
+    }
+
+    // Check if there are certificates to display.
+    if (\tool_certificate\certificate::count_issues_for_user($user->id) == 0) {
+        return;
+    }
+
+    // Prepare my ertificates table.
+    $page = optional_param('page', 0, PARAM_INT);
+    $perpage = optional_param('perpage', \mod_customcert\certificate::CUSTOMCERT_PER_PAGE, PARAM_INT);
+    $pageurl = new moodle_url('/user/profile.php', ['userid' => $user->id, 'page' => $page, 'perpage' => $perpage]);
+
+    $table = new \theme_edunao\output\customcert\my_certificates_table($user->id, null);
+    $table->define_baseurl($pageurl);
+
+    // Add content to the category.
+    $node = new core_user\output\myprofile\node(
+        'mycertificates',
+        '',
+        get_string('mycertificates', 'theme_edunao'),
+        null,
+        null,
+        $table->output_html($perpage)
+    );
+    $tree->add_node($node);
+}
