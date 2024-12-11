@@ -39,4 +39,17 @@ $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
 $THEME->haseditswitch = true;
 $THEME->removedprimarynavitems = explode(',', get_config('theme_boost_union', 'hidenodesprimarynavigation'));
 
+$THEME->scss = function($theme) {
+    global $CFG;
+
+    require_once($CFG->dirroot.'/theme/boost_union/lib.php');
+
+    $scss = theme_boost_union_get_main_scss_content($theme);
+
+    // Include post.scss from Edunao.
+    $scss .= file_get_contents($CFG->dirroot . '/theme/edunao/scss/edunao/post.scss');
+
+    return $scss;
+};
+
 $THEME->layouts = [];

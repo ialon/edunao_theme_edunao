@@ -1,0 +1,23 @@
+/*
+*  USER PROFILE
+*/
+/* Display cards in full width */
+.userprofile .profile_tree {
+    column-count: 1;
+}
+
+/* Remove the border from the card */
+.userprofile .card {
+    border: none;
+}
+
+/* Hide the table header */
+.userprofile .mycertificates thead {
+    display: none;
+}
+
+/* Remove the border from the table */
+.userprofile .mycertificates th,
+.userprofile .mycertificates td {
+    border: none;
+}
