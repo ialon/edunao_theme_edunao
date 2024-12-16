@@ -84,7 +84,8 @@
     <a href="{{#alternativelogolinkurl}}{{{alternativelogolinkurl}}}{{/alternativelogolinkurl}}{{^alternativelogolinkurl}}{{{ config.homeurl }}}{{/alternativelogolinkurl}}" class="navbar-brand align-items-center m-0 mr-4 p-0 aabtn {{#bottombar.drawer}} d-flex {{/bottombar.drawer}} {{^bottombar.drawer}} {{navbardisplayclasses.logolink}} {{/bottombar.drawer}} ">
 
         {{# output.should_display_navbar_logo }}
-            <img src="{{output.get_compact_logo_url}}" class="logo mr-1" alt="{{sitename}}">
+            <img src="{{output.get_logo_url}}" class="logo mr-1 d-none d-sm-flex" alt="{{sitename}}">
+            <img src="{{output.get_compact_logo_url}}" class="logo mr-1 d-sm-none" alt="{{sitename}}">
         {{/ output.should_display_navbar_logo }}
         {{^ output.should_display_navbar_logo }}
             {{{ sitename }}}
