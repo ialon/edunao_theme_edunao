@@ -148,7 +148,8 @@ class my_certificates_table extends \tool_certificate\my_certificates_table {
         }
 
         $nameandtime = \html_writer::div($name, 'cert-name');
-        $nameandtime .= userdate($certificate->timecreated, get_string('strftimedate', 'core_langconfig'));
+        $date = userdate($certificate->timecreated, get_string('strftimedate', 'core_langconfig'));
+        $nameandtime .= get_string('issuedon', 'theme_edunao', $date);
 
         return $nameandtime;
     }

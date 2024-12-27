@@ -49,3 +49,4 @@ $string['mycertificates'] = 'Mes certificats';
 $string['thumbnail'] = 'Vignette';
 $string['nameandtime'] = 'Nom et date d\'émission';
 $string['courselink'] = 'Lien du cours';
+$string['issuedon'] = 'Émis le {$a}';

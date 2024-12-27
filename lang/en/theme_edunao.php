@@ -49,3 +49,4 @@ $string['mycertificates'] = 'My certificates';
 $string['thumbnail'] = 'Thumbnail';
 $string['nameandtime'] = 'Name and date issued';
 $string['courselink'] = 'Course link';
+$string['issuedon'] = 'Issued {$a}';
