@@ -77,6 +77,8 @@ class my_certificates_table extends \tool_certificate\my_certificates_table {
 
         $this->define_columns($columns);
         $this->define_headers($headers);
+        $this->column_class('thumbnail', 'thumbnail');
+        $this->column_class('nameandtime', 'nameandtime');
         $this->column_class('courselink', 'icon');
         $this->column_class('download', 'icon');
         $this->column_class('linkedin', 'icon');

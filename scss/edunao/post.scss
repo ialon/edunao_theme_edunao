@@ -1,6 +1,27 @@
 /*
 *  USER PROFILE
 */
+/* Responsive queries */
+@media (max-width: 480px) {
+    /* Display cells in a single column */
+    .userprofile .mycertificates td {
+        width: 100%;
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .userprofile .mycertificates .nameandtime {
+        width: 100%;
+        display: block;
+    }
+    
+    .userprofile .mycertificates td.icon {
+        display: inline-flex;
+        margin-left: 15px;
+    }
+}
+
 /* Align the edit profile button with first field */
 #page-user-profile .node_category .editprofile {
     margin-top: 0px;
@@ -29,6 +50,10 @@
 }
 
 /* Style course image thumbnail */
+.userprofile .mycertificates .thumbnail {
+    width: 200px;
+}
+
 .userprofile .course-thumbnail {
     width: 200px;
     height: 90px;
