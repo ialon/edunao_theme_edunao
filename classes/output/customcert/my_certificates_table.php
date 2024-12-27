@@ -168,7 +168,7 @@ class my_certificates_table extends \tool_certificate\my_certificates_table {
         if ($certificate->courseid) {
             // Obtain course directly from DB to allow missing courses.
             if ($course = $DB->get_record('course', ['id' => $certificate->courseid])) {
-                $icon = new \pix_icon('i/course', get_string('course'));
+                $icon = new \pix_icon('i/course', get_string('viewcourse', 'theme_edunao'));
                 $courseurl = new \moodle_url('/course/view.php', ['id' => $certificate->courseid]);
 
                 $link = $OUTPUT->action_link($courseurl, '', null, ['target' => '_blank'], $icon);
@@ -176,6 +176,21 @@ class my_certificates_table extends \tool_certificate\my_certificates_table {
         }
 
         return $link;
+    }
+
+    /**
+     * Generate the download column.
+     *
+     * @param \stdClass $issue
+     * @return string
+     */
+    public function col_download($issue) {
+        global $OUTPUT;
+
+        $icon = new \pix_icon('download', get_string('downloadcertificate', 'theme_edunao'), 'tool_certificate');
+        $link = \tool_certificate\template::view_url($issue->code);
+
+        return $OUTPUT->action_link($link, '', null, ['target' => '_blank'], $icon);
     }
 
     /**

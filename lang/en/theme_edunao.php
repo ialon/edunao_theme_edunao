@@ -50,3 +50,5 @@ $string['thumbnail'] = 'Thumbnail';
 $string['nameandtime'] = 'Name and date issued';
 $string['courselink'] = 'Course link';
 $string['issuedon'] = 'Issued {$a}';
+$string['viewcourse'] = 'View course';
+$string['downloadcertificate'] = 'Download certificate';

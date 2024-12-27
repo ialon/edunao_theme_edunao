@@ -50,3 +50,5 @@ $string['thumbnail'] = 'Vignette';
 $string['nameandtime'] = 'Nom et date d\'émission';
 $string['courselink'] = 'Lien du cours';
 $string['issuedon'] = 'Émis le {$a}';
+$string['viewcourse'] = 'Voir le cours';
+$string['downloadcertificate'] = 'Télécharger le certificat';
