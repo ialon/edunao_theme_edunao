@@ -62,6 +62,13 @@
     border-radius: calc(0.5rem - 1px);
 }
 
+.userprofile .course-thumbnail img {
+    position: relative;
+    height: 30px;
+    left: 165px;
+    top: 55px;
+}
+
 /* Style certificate name */
 .mycertificates .cert-name {
     font-weight: bold;

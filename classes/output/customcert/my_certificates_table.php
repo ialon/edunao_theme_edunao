@@ -98,13 +98,17 @@ class my_certificates_table extends \tool_certificate\my_certificates_table {
     public function col_thumbnail($certificate) {
         global $DB, $OUTPUT;
 
-        // Prepare backgroun image.
+        // Prepare certificate icon.
+        $pixurl = $OUTPUT->image_url('certificate', 'theme_edunao');
+        $pix = \html_writer::img($pixurl, 'certificate-icon');
+
+        // Prepare background image.
         $courseimage = \cache::make('core', 'course_image')->get($certificate->courseid);
         if (is_null($courseimage)) {
             $courseimage = $OUTPUT->get_generated_image_for_id($certificate->id);
         }
         $attrs = array('style' => 'background-image: url("' . $courseimage . '");');
-        $output = \html_writer::div('', 'course-thumbnail', $attrs);
+        $output = \html_writer::div($pix, 'course-thumbnail', $attrs);
 
         if ($certificate->courseid) {
             // Obtain course directly from DB to allow missing courses.
@@ -112,7 +116,7 @@ class my_certificates_table extends \tool_certificate\my_certificates_table {
 
             if ($course) {
                 $courseurl = new \moodle_url('/course/view.php', ['id' => $certificate->courseid]);
-                $innerhtml = '<span class="sr-only">' . $course->fullname . '</span>';
+                $innerhtml = '<span class="sr-only">' . $course->fullname . '</span>' . $pix;
                 $thumbnail = \html_writer::div($innerhtml, 'course-thumbnail', $attrs);
                 $output = \html_writer::link($courseurl, $thumbnail);
             }
