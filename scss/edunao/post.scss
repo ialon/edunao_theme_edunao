@@ -49,6 +49,11 @@
     border: none;
 }
 
+/* Add border to separate rows */
+tr:nth-child(n+2) {
+    border-top: 1px solid #ced4db;
+}
+
 /* Style course image thumbnail */
 .userprofile .mycertificates .thumbnail {
     width: 200px;
