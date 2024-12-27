@@ -25,12 +25,14 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'theme_edunao';
-$plugin->version = 2023102051;
+$plugin->version = 2023102052;
 $plugin->release = 'v4.3-r19';
 $plugin->requires = 2023100900;
 $plugin->supported = [403, 403];
 $plugin->maturity = MATURITY_STABLE;
 $plugin->dependencies = [
+    'tool_certificate' => 2024081300,
+    'mod_coursecertificate' => 2024081300,
     'theme_boost' => 2023100900,
     'theme_boost_union' => 2023102047
 ];
