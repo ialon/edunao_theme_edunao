@@ -75,11 +75,18 @@ function theme_edunao_myprofile_navigation(core_user\output\myprofile\tree $tree
     $table = new \theme_edunao\output\customcert\my_certificates_table($user->id, null);
     $table->define_baseurl($pageurl);
 
+    // Do not display the same heading twice
+    $config = get_config('theme_edunao');
+    $title = '';
+    if (!$config->display_category_title) {
+        $title = \html_writer::tag('h3', get_string('mycertificates', 'theme_edunao'), array('class' => 'lead'));
+    }
+
     // Add content to the category.
     $node = new core_user\output\myprofile\node(
         'mycertificates',
         '',
-        get_string('mycertificates', 'theme_edunao'),
+        $title,
         null,
         null,
         $table->output_html($perpage)
