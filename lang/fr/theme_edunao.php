@@ -33,8 +33,8 @@ $string['generalsettings'] = 'Paramètres généraux';
 // Paramètres : Chaînes générales.
 $string['myprofile_categories'] = 'Catégories de mon profil';
 $string['myprofile_categories_desc'] = 'Sélectionnez les catégories que vous souhaitez afficher dans la page Mon Profil.';
-$string['display_category_title'] = 'Afficher le titre de la catégorie';
-$string['display_category_title_desc'] = 'Sélectionnez si vous souhaitez afficher les titres des catégories dans la page Mon Profil.';
+$string['hide_category_title'] = 'Masquer le titre de la catégorie';
+$string['hide_category_title_desc'] = 'Sélectionnez si vous souhaitez masquer les titres des catégories dans la page Mon Profil.';
 $string['restrict_preferences'] = 'Restreindre l\'accès à la page des préférences';
 $string['restrict_preferences_desc'] = 'Supprime les liens vers la page des préférences et redirige les utilisateurs vers la page Mon Profil s\'ils essaient d\'y accéder directement (sauf les administrateurs)';
 $string['restrict_my_certificates'] = 'Restreindre l\'accès à la page Mes Certificats';

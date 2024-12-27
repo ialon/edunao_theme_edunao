@@ -33,8 +33,8 @@ $string['generalsettings'] = 'General Settings';
 // Settings: General strings.
 $string['myprofile_categories'] = 'My profile categories';
 $string['myprofile_categories_desc'] = 'Select the categories you want to display in the My Profile page.';
-$string['display_category_title'] = 'Display category title';
-$string['display_category_title_desc'] = 'Select whether to display the category titles in the My Profile page.';
+$string['hide_category_title'] = 'Hide category title';
+$string['hide_category_title_desc'] = 'Select whether to hide the category titles in the My Profile page.';
 $string['restrict_preferences'] = 'Restrict access to preferences page';
 $string['restrict_preferences_desc'] = 'Removes links to Preferences page and redirects users to My Profile page if they try to access it directly (except admins)';
 $string['restrict_my_certificates'] = 'Restrict access to My Certificates page';

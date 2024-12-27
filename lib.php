@@ -83,7 +83,7 @@ function theme_edunao_myprofile_navigation(core_user\output\myprofile\tree $tree
     // Do not display the same heading twice
     $config = get_config('theme_edunao');
     $title = '';
-    if (!$config->display_category_title) {
+    if ($config->hide_category_title) {
         $title = \html_writer::tag('h3', get_string('mycertificates', 'theme_edunao'), array('class' => 'lead'));
     }
 

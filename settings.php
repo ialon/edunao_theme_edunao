@@ -54,10 +54,10 @@ if (!during_initial_install() && $ADMIN->fulltree) {
         0 => get_string('no')
     ];
 
-    $name = 'theme_edunao/display_category_title';
-    $title = get_string('display_category_title', 'theme_edunao');
-    $description = get_string('display_category_title_desc', 'theme_edunao');
-    $setting = new admin_setting_configselect($name, $title, $description, 0, $yesnooption);
+    $name = 'theme_edunao/hide_category_title';
+    $title = get_string('hide_category_title', 'theme_edunao');
+    $description = get_string('hide_category_title_desc', 'theme_edunao');
+    $setting = new admin_setting_configselect($name, $title, $description, 1, $yesnooption);
     $page->add($setting);
 
 

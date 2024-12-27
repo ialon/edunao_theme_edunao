@@ -101,7 +101,7 @@ class myprofile_renderer extends renderer {
             $return .= \html_writer::start_tag('div', array('class' => 'card-body'));
         }
 
-        if ($config->display_category_title) {
+        if (!$config->hide_category_title) {
             $return .= \html_writer::tag('h3', $category->title, array('class' => 'lead'));
         }
 
