@@ -1,6 +1,12 @@
 /*
 *  USER PROFILE
 */
+/* Align the edit profile button with first field */
+#page-user-profile .node_category .editprofile {
+    margin-top: 0px;
+    float: right;
+}
+
 /* Display cards in full width */
 .userprofile .profile_tree {
     column-count: 1;
