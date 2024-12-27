@@ -52,6 +52,8 @@ class myprofile_renderer extends renderer {
             $userauthplugin = get_auth_plugin($USER->auth);
         }
 
+        /*
+        // Removed. Safe to delete if not requested again in the future.
         if ($userauthplugin && !\core\session\manager::is_loggedinas() && !isguestuser() &&
             has_capability('moodle/user:changeownpassword', $systemcontext) && $userauthplugin->can_change_password()) {
             $passwordchangeurl = $userauthplugin->change_password_url();
@@ -62,6 +64,7 @@ class myprofile_renderer extends renderer {
             $tree->add_node($node);
             $tree->categories['contact']->add_node($node);
         }
+        */
 
         $return = \html_writer::start_tag('div', array('class' => 'profile_tree'));
         $categories = $tree->categories;
