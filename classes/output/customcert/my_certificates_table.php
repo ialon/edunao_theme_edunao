@@ -129,13 +129,15 @@ class my_certificates_table extends \tool_certificate\my_certificates_table {
         global $DB;
 
         $context = \context::instance_by_id($certificate->contextid);
+
+        // Use certificate name as fallback
         $name = format_string($certificate->name, true, ['context' => $context]);
 
         if ($certificate->courseid) {
             // Obtain course directly from DB to allow missing courses.
             if ($course = $DB->get_record('course', ['id' => $certificate->courseid])) {
                 $context = \context_course::instance($course->id);
-                $name .= " - " . format_string($course->fullname, true, ['context' => $context]);
+                $name = format_string($course->fullname, true, ['context' => $context]);
             }
         }
 
