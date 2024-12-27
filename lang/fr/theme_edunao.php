@@ -36,11 +36,16 @@ $string['myprofile_categories_desc'] = 'Sélectionnez les catégories que vous s
 $string['display_category_title'] = 'Afficher le titre de la catégorie';
 $string['display_category_title_desc'] = 'Sélectionnez si vous souhaitez afficher les titres des catégories dans la page Mon Profil.';
 $string['restrict_preferences'] = 'Restreindre l\'accès à la page des préférences';
-$string['restrict_preferences_desc'] = 'Supprime les liens vers la page des Préférences et redirige les utilisateurs vers la page Mon Profil s\'ils essaient d\'y accéder directement (sauf les administrateurs)';
+$string['restrict_preferences_desc'] = 'Supprime les liens vers la page des préférences et redirige les utilisateurs vers la page Mon Profil s\'ils essaient d\'y accéder directement (sauf les administrateurs)';
+$string['restrict_my_certificates'] = 'Restreindre l\'accès à la page Mes Certificats';
+$string['restrict_my_certificates_desc'] = 'Redirige les utilisateurs vers la page Mon Profil s\'ils essaient d\'accéder directement à la page Mes Certificats (sauf les administrateurs)';
 $string['hide_breadcrumbs'] = 'Masquer les fil d\'Ariane';
 $string['hide_breadcrumbs_desc'] = 'Masquer les fil d\'Ariane dans l\'en-tête de la page de profil.';
 $string['hide_mainnavbar'] = 'Masquer la barre de navigation principale';
 $string['hide_mainnavbar_desc'] = 'Masquer la barre de navigation principale dans l\'en-tête de la page.';
 
-// My certificates.
+// Mes certificats.
 $string['mycertificates'] = 'Mes certificats';
+$string['thumbnail'] = 'Vignette';
+$string['nameandtime'] = 'Nom et date d\'émission';
+$string['courselink'] = 'Lien du cours';

@@ -69,6 +69,14 @@ if (!during_initial_install() && $ADMIN->fulltree) {
     $page->add($setting);
 
 
+    // Restrict access to My Certificates page
+    $name = 'theme_edunao/restrict_my_certificates';
+    $title = get_string('restrict_my_certificates', 'theme_edunao');
+    $description = get_string('restrict_my_certificates_desc', 'theme_edunao');
+    $setting = new admin_setting_configselect($name, $title, $description, 1, $yesnooption);
+    $page->add($setting);
+
+
     // Hide breadcrumbs
     $name = 'theme_edunao/hide_breadcrumbs';
     $title = get_string('hide_breadcrumbs', 'theme_edunao');

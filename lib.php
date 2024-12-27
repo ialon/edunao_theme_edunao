@@ -36,9 +36,14 @@ function theme_edunao_after_require_login() {
     global $SERVER;
 
     $url = $_SERVER['PHP_SELF'];
+
+    $redirected = [
+        '/user/preferences.php' => 'restrict_preferences',
+        '/admin/tool/certificate/my.php' => 'restrict_my_certificates'
+    ];
     
-    if ($url == '/user/preferences.php') {
-        $restrict = get_config('theme_edunao', 'restrict_preferences');
+    if (in_array($url, array_keys($redirected))) {
+        $restrict = get_config('theme_edunao', $redirected[$url]);
 
         if (!is_siteadmin() && $restrict) {
             redirect('/user/profile.php');
@@ -67,7 +72,7 @@ function theme_edunao_myprofile_navigation(core_user\output\myprofile\tree $tree
         return;
     }
 
-    // Prepare my ertificates table.
+    // Prepare my certificates table.
     $page = optional_param('page', 0, PARAM_INT);
     $perpage = optional_param('perpage', \mod_customcert\certificate::CUSTOMCERT_PER_PAGE, PARAM_INT);
     $pageurl = new moodle_url('/user/profile.php', ['userid' => $user->id, 'page' => $page, 'perpage' => $perpage]);
