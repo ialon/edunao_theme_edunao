@@ -83,7 +83,9 @@ class my_certificates_table extends \tool_certificate\my_certificates_table {
         $this->column_class('download', 'icon');
         $this->column_class('linkedin', 'icon');
         $this->collapsible(false);
-        $this->sortable(true);
+        $this->sortable(false);
+        $this->no_sorting('thumbnail');
+        $this->no_sorting('nameandtime');
         $this->no_sorting('courselink');
         $this->no_sorting('download');
         $this->is_downloadable(false);
