@@ -74,7 +74,7 @@ function theme_edunao123_myprofile_navigation(core_user\output\myprofile\tree $t
 
     // Prepare my certificates table.
     $page = optional_param('page', 0, PARAM_INT);
-    $perpage = optional_param('perpage', \mod_customcert\certificate::CUSTOMCERT_PER_PAGE, PARAM_INT);
+    $perpage = optional_param('perpage', \tool_certificate\certificate::ISSUES_PER_PAGE, PARAM_INT);
     $pageurl = new moodle_url('/user/profile.php', ['userid' => $user->id, 'page' => $page, 'perpage' => $perpage]);
 
     $table = new \theme_edunao123\output\customcert\my_certificates_table($user->id, null);
