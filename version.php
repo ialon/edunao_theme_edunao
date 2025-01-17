@@ -31,8 +31,6 @@ $plugin->requires = 2023100900;
 $plugin->supported = [403, 403];
 $plugin->maturity = MATURITY_STABLE;
 $plugin->dependencies = [
-    'tool_certificate' => 2024081300,
     'mod_coursecertificate' => 2024081300,
-    'theme_boost' => 2023100900,
     'theme_boost_union' => 2023102047
 ];
