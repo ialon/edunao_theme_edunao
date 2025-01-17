@@ -18,12 +18,12 @@
 /**
  * Theme Edunao - Language pack
  *
- * @package    theme_edunao
+ * @package    theme_edunao123
  * @copyright  2024 Mako Digital <admin@mako.digital>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace theme_edunao\output\core_user;
+namespace theme_edunao123\output\core_user;
 
 use \core_user\output\myprofile\renderer;
 use \core_user\output\myprofile\category;
@@ -83,7 +83,7 @@ class myprofile_renderer extends renderer {
      * @return string
      */
     public function render_category(category $category) {
-        $config = get_config('theme_edunao');
+        $config = get_config('theme_edunao123');
         $allowed_categories = explode(',', $config->myprofile_categories);
 
         if (!in_array($category->name, $allowed_categories)) {

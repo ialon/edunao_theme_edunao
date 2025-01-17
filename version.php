@@ -17,14 +17,14 @@
 /**
  * Theme Edunao - Version file
  *
- * @package    theme_edunao
+ * @package    theme_edunao123
  * @copyright  2024 Mako Digital <admin@mako.digital>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'theme_edunao';
+$plugin->component = 'theme_edunao123';
 $plugin->version = 2023102052;
 $plugin->release = 'v4.3-r19';
 $plugin->requires = 2023100900;

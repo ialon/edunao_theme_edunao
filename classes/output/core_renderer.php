@@ -17,16 +17,16 @@
 /**
  * Theme Edunao - Core renderer
  *
- * @package    theme_edunao
+ * @package    theme_edunao123
  * @copyright  2024 Mako Digital <admin@mako.digital>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace theme_edunao\output;
+namespace theme_edunao123\output;
 
 class core_renderer extends \theme_boost_union\output\core_renderer {
     /**
-     * Renders empty "breadcrumb" for all pages in edunao.
+     * Renders empty "breadcrumb" for all pages in edunao123.
      *
      * @return string the HTML for the navbar.
      */
@@ -35,7 +35,7 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
     
         $url = $_SERVER['PHP_SELF'];
 
-        $hide = get_config('theme_edunao', 'hide_breadcrumbs');
+        $hide = get_config('theme_edunao123', 'hide_breadcrumbs');
 
         if ($hide && str_contains($url, "/user/")) {
             return '';

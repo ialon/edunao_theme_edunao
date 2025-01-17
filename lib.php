@@ -18,7 +18,7 @@
 /**
  * Theme Edunao - Language pack
  *
- * @package    theme_edunao
+ * @package    theme_edunao123
  * @copyright  2024 Mako Digital <admin@mako.digital>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -32,7 +32,7 @@ defined('MOODLE_INTERNAL') || die();
  * This is an implementation of a legacy callback that will only be called in older Moodle versions.
  * It will not be called in Moodle 4.4+ that contain the hook core\hook\output\before_http_headers,
  */
-function theme_edunao_after_require_login() {
+function theme_edunao123_after_require_login() {
     global $SERVER;
 
     $url = $_SERVER['PHP_SELF'];
@@ -43,7 +43,7 @@ function theme_edunao_after_require_login() {
     ];
     
     if (in_array($url, array_keys($redirected))) {
-        $restrict = get_config('theme_edunao', $redirected[$url]);
+        $restrict = get_config('theme_edunao123', $redirected[$url]);
 
         if (!is_siteadmin() && $restrict) {
             redirect('/user/profile.php');
@@ -51,14 +51,14 @@ function theme_edunao_after_require_login() {
     }
 }
 
-function theme_edunao_myprofile_navigation(core_user\output\myprofile\tree $tree, $user, $iscurrentuser, $course) {
+function theme_edunao123_myprofile_navigation(core_user\output\myprofile\tree $tree, $user, $iscurrentuser, $course) {
     global $USER;
 
     // Check that we have a valid user.
     $user = \core_user::get_user($user->id, '*', MUST_EXIST);
 
     // Create the category.
-    $categoryname = get_string('mycertificates', 'theme_edunao');
+    $categoryname = get_string('mycertificates', 'theme_edunao123');
     $category = new core_user\output\myprofile\category('mycertificates', $categoryname, 'contact');
     $tree->add_category($category);
 
@@ -77,14 +77,14 @@ function theme_edunao_myprofile_navigation(core_user\output\myprofile\tree $tree
     $perpage = optional_param('perpage', \mod_customcert\certificate::CUSTOMCERT_PER_PAGE, PARAM_INT);
     $pageurl = new moodle_url('/user/profile.php', ['userid' => $user->id, 'page' => $page, 'perpage' => $perpage]);
 
-    $table = new \theme_edunao\output\customcert\my_certificates_table($user->id, null);
+    $table = new \theme_edunao123\output\customcert\my_certificates_table($user->id, null);
     $table->define_baseurl($pageurl);
 
     // Do not display the same heading twice
-    $config = get_config('theme_edunao');
+    $config = get_config('theme_edunao123');
     $title = '';
     if ($config->hide_category_title) {
-        $title = \html_writer::tag('h3', get_string('mycertificates', 'theme_edunao'), array('class' => 'lead'));
+        $title = \html_writer::tag('h3', get_string('mycertificates', 'theme_edunao123'), array('class' => 'lead'));
     }
 
     // Add content to the category.

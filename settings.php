@@ -17,7 +17,7 @@
 /**
  * Theme Edunao - Settings file
  *
- * @package    theme_edunao
+ * @package    theme_edunao123
  * @copyright  2024 Mako Digital <admin@mako.digital>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -30,8 +30,8 @@ require_once($CFG->dirroot.'/user/profile/lib.php');
 if (!during_initial_install() && $ADMIN->fulltree) {
     global $USER;
 
-    $settings = new theme_boost_admin_settingspage_tabs('themesettingedunao', get_string('configtitle', 'theme_edunao'));
-    $page = new admin_settingpage('themeedunao', get_string('generalsettings', 'theme_edunao'));
+    $settings = new theme_boost_admin_settingspage_tabs('themesettingedunao123', get_string('configtitle', 'theme_edunao123'));
+    $page = new admin_settingpage('themeedunao123', get_string('generalsettings', 'theme_edunao123'));
 
 
     // Select which categories to display in user profile page
@@ -41,9 +41,9 @@ if (!during_initial_install() && $ADMIN->fulltree) {
         $categories[$category->name] = $category->title;
     }
 
-    $name = 'theme_edunao/myprofile_categories';
-    $title = get_string('myprofile_categories', 'theme_edunao');
-    $description = get_string('myprofile_categories_desc', 'theme_edunao');
+    $name = 'theme_edunao123/myprofile_categories';
+    $title = get_string('myprofile_categories', 'theme_edunao123');
+    $description = get_string('myprofile_categories_desc', 'theme_edunao123');
     $setting = new admin_setting_configmulticheckbox($name, $title, $description, ['contact' => 1, 'mycertificates' => 1], $categories);
     $page->add($setting);
 
@@ -54,41 +54,41 @@ if (!during_initial_install() && $ADMIN->fulltree) {
         0 => get_string('no')
     ];
 
-    $name = 'theme_edunao/hide_category_title';
-    $title = get_string('hide_category_title', 'theme_edunao');
-    $description = get_string('hide_category_title_desc', 'theme_edunao');
+    $name = 'theme_edunao123/hide_category_title';
+    $title = get_string('hide_category_title', 'theme_edunao123');
+    $description = get_string('hide_category_title_desc', 'theme_edunao123');
     $setting = new admin_setting_configselect($name, $title, $description, 1, $yesnooption);
     $page->add($setting);
 
 
     // Restrict access to preferences page
-    $name = 'theme_edunao/restrict_preferences';
-    $title = get_string('restrict_preferences', 'theme_edunao');
-    $description = get_string('restrict_preferences_desc', 'theme_edunao');
+    $name = 'theme_edunao123/restrict_preferences';
+    $title = get_string('restrict_preferences', 'theme_edunao123');
+    $description = get_string('restrict_preferences_desc', 'theme_edunao123');
     $setting = new admin_setting_configselect($name, $title, $description, 1, $yesnooption);
     $page->add($setting);
 
 
     // Restrict access to My Certificates page
-    $name = 'theme_edunao/restrict_my_certificates';
-    $title = get_string('restrict_my_certificates', 'theme_edunao');
-    $description = get_string('restrict_my_certificates_desc', 'theme_edunao');
+    $name = 'theme_edunao123/restrict_my_certificates';
+    $title = get_string('restrict_my_certificates', 'theme_edunao123');
+    $description = get_string('restrict_my_certificates_desc', 'theme_edunao123');
     $setting = new admin_setting_configselect($name, $title, $description, 1, $yesnooption);
     $page->add($setting);
 
 
     // Hide breadcrumbs
-    $name = 'theme_edunao/hide_breadcrumbs';
-    $title = get_string('hide_breadcrumbs', 'theme_edunao');
-    $description = get_string('hide_breadcrumbs_desc', 'theme_edunao');
+    $name = 'theme_edunao123/hide_breadcrumbs';
+    $title = get_string('hide_breadcrumbs', 'theme_edunao123');
+    $description = get_string('hide_breadcrumbs_desc', 'theme_edunao123');
     $setting = new admin_setting_configselect($name, $title, $description, 1, $yesnooption);
     $page->add($setting);
 
 
     // Hide main navigation bar
-    $name = 'theme_edunao/hide_mainnavbar';
-    $title = get_string('hide_mainnavbar', 'theme_edunao');
-    $description = get_string('hide_mainnavbar_desc', 'theme_edunao');
+    $name = 'theme_edunao123/hide_mainnavbar';
+    $title = get_string('hide_mainnavbar', 'theme_edunao123');
+    $description = get_string('hide_mainnavbar_desc', 'theme_edunao123');
     $setting = new admin_setting_configselect($name, $title, $description, 1, $yesnooption);
     $page->add($setting);
 

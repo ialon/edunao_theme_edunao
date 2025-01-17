@@ -68,9 +68,9 @@ if ($PAGE->has_secondary_navigation()) {
     }
 }
 
-// Load the navigation from edunao primary navigation, the extended version of boost_union primary navigation.
+// Load the navigation from edunao123 primary navigation, the extended version of boost_union primary navigation.
 // It includes the smart menus and menu items, for multiple locations.
-$primary = new theme_edunao\output\navigation\primary($PAGE);
+$primary = new theme_edunao123\output\navigation\primary($PAGE);
 $renderer = $PAGE->get_renderer('core');
 $primarymenu = $primary->export_for_template($renderer);
 

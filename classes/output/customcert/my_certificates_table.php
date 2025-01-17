@@ -22,7 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace theme_edunao\output\customcert;
+namespace theme_edunao123\output\customcert;
 
 defined('MOODLE_INTERNAL') || die;
 
@@ -63,9 +63,9 @@ class my_certificates_table extends \tool_certificate\my_certificates_table {
             'download',
         ];
         $headers = [
-            get_string('thumbnail', 'theme_edunao'),
-            get_string('nameandtime', 'theme_edunao'),
-            get_string('courselink', 'theme_edunao'),
+            get_string('thumbnail', 'theme_edunao123'),
+            get_string('nameandtime', 'theme_edunao123'),
+            get_string('courselink', 'theme_edunao123'),
             get_string('file'),
         ];
 
@@ -99,7 +99,7 @@ class my_certificates_table extends \tool_certificate\my_certificates_table {
         global $DB, $OUTPUT;
 
         // Prepare certificate icon.
-        $pixurl = $OUTPUT->image_url('certificate', 'theme_edunao');
+        $pixurl = $OUTPUT->image_url('certificate', 'theme_edunao123');
         $pix = \html_writer::img($pixurl, 'certificate-icon');
 
         // Prepare background image.
@@ -149,7 +149,7 @@ class my_certificates_table extends \tool_certificate\my_certificates_table {
 
         $nameandtime = \html_writer::div($name, 'cert-name');
         $date = userdate($certificate->timecreated, get_string('strftimedate', 'core_langconfig'));
-        $nameandtime .= get_string('issuedon', 'theme_edunao', $date);
+        $nameandtime .= get_string('issuedon', 'theme_edunao123', $date);
 
         return $nameandtime;
     }
@@ -168,7 +168,7 @@ class my_certificates_table extends \tool_certificate\my_certificates_table {
         if ($certificate->courseid) {
             // Obtain course directly from DB to allow missing courses.
             if ($course = $DB->get_record('course', ['id' => $certificate->courseid])) {
-                $icon = new \pix_icon('i/course', get_string('viewcourse', 'theme_edunao'));
+                $icon = new \pix_icon('i/course', get_string('viewcourse', 'theme_edunao123'));
                 $courseurl = new \moodle_url('/course/view.php', ['id' => $certificate->courseid]);
 
                 $link = $OUTPUT->action_link($courseurl, '', null, ['target' => '_blank'], $icon);
@@ -187,7 +187,7 @@ class my_certificates_table extends \tool_certificate\my_certificates_table {
     public function col_download($issue) {
         global $OUTPUT;
 
-        $icon = new \pix_icon('download', get_string('downloadcertificate', 'theme_edunao'), 'tool_certificate');
+        $icon = new \pix_icon('download', get_string('downloadcertificate', 'theme_edunao123'), 'tool_certificate');
         $link = \tool_certificate\template::view_url($issue->code);
 
         return $OUTPUT->action_link($link, '', null, ['target' => '_blank'], $icon);

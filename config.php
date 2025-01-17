@@ -17,14 +17,14 @@
 /**
  * Theme Edunao - Language pack
  *
- * @package    theme_edunao
+ * @package    theme_edunao123
  * @copyright  2024 Mako Digital <admin@mako.digital>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$THEME->name = 'edunao';
+$THEME->name = 'edunao123';
 $THEME->sheets = [];
 $THEME->editor_sheets = [];
 $THEME->parents = ['boost_union', 'boost'];
@@ -47,7 +47,7 @@ $THEME->scss = function($theme) {
     $scss = theme_boost_union_get_main_scss_content($theme);
 
     // Include post.scss from Edunao.
-    $scss .= file_get_contents($CFG->dirroot . '/theme/edunao/scss/edunao/post.scss');
+    $scss .= file_get_contents($CFG->dirroot . '/theme/edunao123/scss/edunao123/post.scss');
 
     return $scss;
 };

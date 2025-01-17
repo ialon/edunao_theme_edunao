@@ -17,7 +17,7 @@
 /**
  * Theme Edunao - Navbar layout include.
  *
- * @package    theme_edunao
+ * @package    theme_edunao123
  * @copyright  2024 Mako Digital <admin@mako.digital>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -31,7 +31,7 @@ $templatecontext['navbardisplayclasses']['toggle'] = 'd-block d-md-none';
 $templatecontext['navbardisplayclasses']['logolink'] = 'd-none d-md-flex';
 
 // Hide main navbar.
-$hide = get_config('theme_edunao', 'hide_mainnavbar');
+$hide = get_config('theme_edunao123', 'hide_mainnavbar');
 if ($hide) {
     $templatecontext['mobileprimarynav'] = [];
     if (isset($templatecontext['primarymoremenu']['nodearray'])) {

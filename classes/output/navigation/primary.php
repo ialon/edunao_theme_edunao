@@ -17,15 +17,15 @@
 /**
  * Theme Edunao - Primary navigation render.
  *
- * @package    theme_edunao
+ * @package    theme_edunao123
  * @copyright  2024 Mako Digital <admin@mako.digital>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace theme_edunao\output\navigation;
+namespace theme_edunao123\output\navigation;
 
 use renderer_base;
-use theme_edunao\smartmenu;
+use theme_edunao123\smartmenu;
 
 class primary extends \theme_boost_union\output\navigation\primary {
     /** @var \moodle_page $page the moodle page that the navigation belongs to */
@@ -150,7 +150,7 @@ class primary extends \theme_boost_union\output\navigation\primary {
         $parentoutput = parent::get_user_menu($output);
         
         // Remove link to preferences page
-        $restrict = get_config('theme_edunao', 'restrict_preferences');
+        $restrict = get_config('theme_edunao123', 'restrict_preferences');
 
         if (!is_siteadmin() && (isset($parentoutput) && isset($parentoutput['items'])) && $restrict) {
             $newitems = [];
