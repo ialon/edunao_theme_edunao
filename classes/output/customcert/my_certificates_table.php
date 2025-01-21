@@ -105,9 +105,9 @@ class my_certificates_table extends \tool_certificate\my_certificates_table {
         $pix = \html_writer::img($pixurl, 'certificate-icon');
 
         // Prepare background image.
-        $courseimage = \cache::make('core', 'course_image')->get($certificate->courseid);
-        if (is_null($courseimage)) {
-            $courseimage = $OUTPUT->get_generated_image_for_id($certificate->id);
+        $courseimage = $OUTPUT->get_generated_image_for_id($certificate->id);
+        if ($certificate->courseid) {
+            $courseimage = \cache::make('core', 'course_image')->get($certificate->courseid);
         }
         $attrs = array('style' => 'background-image: url("' . $courseimage . '");');
         $output = \html_writer::div($pix, 'course-thumbnail', $attrs);
