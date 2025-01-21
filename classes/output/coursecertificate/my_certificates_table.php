@@ -17,12 +17,12 @@
 /**
  * The report that displays the certificates the user has throughout the site.
  *
- * @package    mod_customcert
+ * @package    mod_coursecertificate
  * @copyright  2016 Mark Nelson <markn@moodle.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace theme_edunao123\output\customcert;
+namespace theme_edunao123\output\coursecertificate;
 
 defined('MOODLE_INTERNAL') || die;
 
@@ -33,7 +33,7 @@ require_once($CFG->libdir . '/tablelib.php');
 /**
  * Class for the report that displays the certificates the user has throughout the site.
  *
- * @package    mod_customcert
+ * @package    mod_coursecertificate
  * @copyright  2016 Mark Nelson <markn@moodle.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

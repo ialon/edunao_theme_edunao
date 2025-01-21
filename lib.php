@@ -77,7 +77,7 @@ function theme_edunao123_myprofile_navigation(core_user\output\myprofile\tree $t
     $perpage = optional_param('perpage', \tool_certificate\certificate::ISSUES_PER_PAGE, PARAM_INT);
     $pageurl = new moodle_url('/user/profile.php', ['userid' => $user->id, 'page' => $page, 'perpage' => $perpage]);
 
-    $table = new \theme_edunao123\output\customcert\my_certificates_table($user->id, null);
+    $table = new \theme_edunao123\output\coursecertificate\my_certificates_table($user->id, null);
     $table->define_baseurl($pageurl);
 
     // Do not display the same heading twice
