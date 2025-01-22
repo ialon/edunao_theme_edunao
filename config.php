@@ -24,20 +24,11 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+// Load boost_union config.
+require_once($CFG->dirroot . '/theme/boost_union/config.php');
+
 $THEME->name = 'edunao123';
-$THEME->sheets = [];
-$THEME->editor_sheets = [];
-$THEME->parents = ['boost_union', 'boost'];
-$THEME->enable_dock = false;
-$THEME->yuicssmodules = [];
-$THEME->extrascsscallback = 'theme_boost_union_get_extra_scss';
-$THEME->prescsscallback = 'theme_boost_union_get_pre_scss';
-$THEME->precompiledcsscallback = 'theme_boost_union_get_precompiled_css';
-$THEME->rendererfactory = 'theme_overridden_renderer_factory';
-$THEME->requiredblocks = '';
-$THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
-$THEME->haseditswitch = true;
-$THEME->removedprimarynavitems = explode(',', get_config('theme_boost_union', 'hidenodesprimarynavigation'));
+$THEME->parents = ['boost_union'];
 
 $THEME->scss = function($theme) {
     global $CFG;
@@ -51,5 +42,3 @@ $THEME->scss = function($theme) {
 
     return $scss;
 };
-
-$THEME->layouts = [];
