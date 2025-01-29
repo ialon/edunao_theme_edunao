@@ -28,7 +28,7 @@ defined('MOODLE_INTERNAL') || die();
 require_once($CFG->dirroot . '/theme/boost_union/config.php');
 
 $THEME->name = 'edunao123';
-$THEME->parents = ['boost_union'];
+$THEME->parents = ['boost_union', 'boost'];
 
 $THEME->scss = function($theme) {
     global $CFG;
