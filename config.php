@@ -29,13 +29,16 @@ require_once($CFG->dirroot . '/theme/boost_union/config.php');
 
 $THEME->name = 'edunao123';
 $THEME->parents = ['boost_union', 'boost'];
+$THEME->rendererfactory = 'theme_overridden_renderer_factory';
 
 $THEME->scss = function($theme) {
     global $CFG;
 
+    require_once($CFG->dirroot.'/lib/outputlib.php');
     require_once($CFG->dirroot.'/theme/boost_union/lib.php');
 
-    $scss = theme_boost_union_get_main_scss_content($theme);
+    $parentconfig = theme_config::load('boost_union');
+    $scss = theme_boost_union_get_main_scss_content($parentconfig);
 
     // Include post.scss from Edunao.
     $scss .= file_get_contents($CFG->dirroot . '/theme/edunao123/scss/edunao123/post.scss');
