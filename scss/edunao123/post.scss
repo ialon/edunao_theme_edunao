@@ -105,3 +105,11 @@ tr:nth-child(n+2) {
 #page-login-index .login-container .form-control-lg {
     font-size: 1rem;
 }
+
+@media (min-width: 576px) {
+    .login-identityproviders a.btn-block {
+        display: inline-block;
+        width: 32%;
+        margin: 0;
+    }
+}
