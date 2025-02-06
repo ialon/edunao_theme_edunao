@@ -1,4 +1,35 @@
 /*
+*   GENERAL STYLING
+*/
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    color:#000091;
+}
+
+body,
+p {
+    color:#575757;
+}
+
+li.nav-item[data-key="mycourses"],
+li.nav-item[data-key="myhome"],
+.popover-region-notifications {
+    display:none;
+}
+
+.navbar-light .navbar-nav .nav-link,
+.navbar-light .navbar-nav .nav-link.active {
+    font-weight:600;
+    color:#575757 !important;
+    font-size: 16px;
+}
+
+.magic-campaign-signup .campaign-block .campaign-wrapper .campaign-container {
+    box-shadow:none!important;
+}
+
+
+
+/*
 *  USER PROFILE
 */
 /* Responsive queries */
@@ -98,10 +129,84 @@ tr:nth-child(n+2) {
     display: none;
 }
 
+/* DASHBOARD HEADER */
+#page-my-index #page-header {
+    display: none;
+}
+
+/* Hide border for generation block on index page */
+#page-my-index section.card[role="complementary"]:first-of-type {
+    border: none;
+}
+
+#page-site-index .card {
+    border:0px;
+}
+
+/* DASHBOARD COURSE TITLES */
+#page-my-index .coursename {
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+/* Reduce space at top of dashboard page */
+#page-my-index #page.drawers .main-inner {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+}
+
+@media (min-width: 576px) {
+    #page-my-index #page.drawers .main-inner {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top:0;
+    }
+}
+
+
 
 /*
 *  LOGIN PAGE
 */
+.login-container .login-heading {
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-weight: normal;
+}
+
+.login-container .login-divider,
+.login-container .login-instructions {
+    display:none;
+}
+
+.login-container div.login-signup > a {
+    width:100%;
+}
+
+.login-container #theme_boost_union-loginorder {
+    padding-bottom:20px;
+}
+
+.login-container #theme_boost_union-loginorder-local {
+    padding-bottom:0px;
+}
+
+.login-container .form-group {
+    margin-bottom: 0.5rem;
+}
+
+.login-container .form-control-lg {
+    height: calc(1.5em + 1rem); 
+    font-size: revert;
+}
+
+.login-container #loginbtn {
+    width:100%;
+    font-size: calc(0.90375rem + 0.045vw);
+}
+
 #page-login-index .login-container .form-control-lg {
     font-size: 1rem;
 }
@@ -113,3 +218,139 @@ tr:nth-child(n+2) {
         margin: 0;
     }
 }
+
+
+
+/*
+*   SIMPLE QUIZ
+*/
+#page-mod-simplequiz-view #simplequiz_container .answers {
+    margin: 10px auto;
+}
+
+#page-mod-simplequiz-view #simplequiz_container .question-status {
+    min-height: 28px;
+}
+
+#page-mod-simplequiz-view #simplequiz_container .answer-container {
+    padding: 25px;
+}
+
+#page-mod-simplequiz-view #simplequiz_container .question-text .question-rank {
+    color: #008196;
+}
+
+#page-mod-simplequiz-view #simplequiz_container .answer-container.selected {
+    background-color: #DEDEDE;
+    color: #008196;
+    border-color: #008196;
+}
+
+#page-mod-simplequiz-view #simplequiz_container button.check-answer,
+#page-mod-simplequiz-view #simplequiz_container button.next-question,
+#page-mod-simplequiz-view #simplequiz_container button.restart,
+#page-mod-simplequiz-view #simplequiz_container button.show-results {
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #008196;
+}
+
+
+
+/*
+*   USER MENU PREFERENCES HACK
+*/
+#user-action-menu a[href$="/user/preferences.php"] {
+    display: none;
+}
+
+
+
+/*
+*   COURSE MENU HACK
+*/
+body.format-edai li[data-key="questionbank"],
+body.format-edai li[data-key="sharecourse"],
+body.format-edai li[data-key="coursecompletion"],
+body.format-edai li[data-region="morebutton"] {
+    display: none;
+}
+
+
+
+/*
+* COURSE SETTINGS HACK
+*/
+#page-course-edit.format-edai #fitem_id_startdate,
+#page-course-edit.format-edai #fitem_id_enddate,
+#page-course-edit.format-edai #fitem_id_idnumber,
+#page-course-edit.format-edai #id_courseformathdr,
+#page-course-edit.format-edai #id_appearancehdr,
+#page-course-edit.format-edai #id_filehdr,
+#page-course-edit.format-edai #id_completionhdr,
+#page-course-edit.format-edai #id_groups {
+    display: none;
+}
+
+
+
+/*
+*   ACTIVITY COMPLETION INFO HACK
+*/
+body.format-edai .activity-information {
+    display:none;
+}
+
+
+
+/*
+*   ACTIVITY HEADER HACK
+*/
+.path-mod .activity-header:not(:empty) {
+    padding-left: 1rem!important;
+    padding-right: 1rem!important;
+}
+
+#page.drawers .activity-header {
+    padding-left: 1rem!important;
+    padding-right: 1rem!important;
+}
+
+
+
+/*
+*   LINK TO LEARNING KPI HACK
+*/
+#page-course-view-topics a[href^="https://123.edunao.com/report/ed_kpi/pages/learning_details.php?type=course&id="] {
+    display: none;
+}
+
+
+
+/*
+*   EDIT PROFILE AND NEW ACCOUNT SIGN UP PAGE HACK
+*/
+/* Hide the City/Town profile field in the General section. */
+#page-login-signup #fitem_id_city,
+#page-user-edit #fitem_id_city,
+/* Hide the Country profile field in the General section. */
+#page-login-signup #fitem_id_country,
+#page-user-edit #fitem_id_country,
+/* Hide the first custom section - if you created one. */
+#page-login-signup #id_category_1,
+#page-user-edit #id_category_1,
+/* Hide the Email display profile field in the General section. */
+#page-user-edit #fitem_id_maildisplay,
+/* Hide the MoodleNet profile field in the General section. */
+#page-user-edit #fitem_id_moodlenetprofile,
+/* Hide the Additional names section. */
+#page-user-edit #id_moodle_additional_names,
+/* Hide the Interests section. */
+#page-user-edit #id_moodle_interests,
+/* Hide Optional section. */
+#page-user-edit #id_moodle_optional,
+.nodisplay { /* The .nodisplay class is just a placeholder. */
+    display: none !important;
+}
+
+
