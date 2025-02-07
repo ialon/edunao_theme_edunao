@@ -52,3 +52,6 @@ $string['courselink'] = 'Course link';
 $string['issuedon'] = 'Issued {$a}';
 $string['viewcourse'] = 'View course';
 $string['downloadcertificate'] = 'Download certificate';
+
+// Login page
+$string['potentialidps'] = 'Log in with:';

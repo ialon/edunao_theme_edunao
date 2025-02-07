@@ -52,3 +52,6 @@ $string['courselink'] = 'Lien du cours';
 $string['issuedon'] = 'Émis le {$a}';
 $string['viewcourse'] = 'Voir le cours';
 $string['downloadcertificate'] = 'Télécharger le certificat';
+
+// Page de connexion
+$string['potentialidps'] = 'Se connecter avec:';
