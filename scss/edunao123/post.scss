@@ -186,7 +186,7 @@ tr:nth-child(n+2) {
 }
 
 .login-container #theme_boost_union-loginorder {
-    padding-bottom:20px;
+    padding-bottom: 0px;
 }
 
 .login-container #theme_boost_union-loginorder-local {
@@ -209,6 +209,18 @@ tr:nth-child(n+2) {
 
 #page-login-index .login-container .form-control-lg {
     font-size: 1rem;
+}
+
+.login-form-forgotpassword.form-group {
+    margin: 0;
+}
+
+.login-container .cookies-notice .btn:hover {
+    text-decoration: underline;
+}
+
+.login-container .cookies-notice .btn:focus {
+    box-shadow: none;
 }
 
 .login-identityproviders {
