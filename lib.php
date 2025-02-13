@@ -98,3 +98,17 @@ function theme_edunao123_myprofile_navigation(core_user\output\myprofile\tree $t
     );
     $tree->add_node($node);
 }
+
+function theme_edunao123_css_postprocess($css, $config) {
+    global $CFG, $PAGE;
+
+    if (str_contains($css, '.impossible-editor')) {
+        $urls = $PAGE->theme->css_urls($PAGE);
+        foreach ($urls as $url) {
+            $css .= file_get_contents($url);
+        }
+        $css .= " /* All the site CSS added successfully */ ";
+    }
+
+    return $css;
+}

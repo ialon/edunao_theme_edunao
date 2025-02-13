@@ -45,3 +45,7 @@ $THEME->scss = function($theme) {
 
     return $scss;
 };
+
+// CSS Hack: Both lines are required to include the theme CSS inside the editor.
+$THEME->editor_sheets = ['editor'];
+$THEME->csspostprocess = 'theme_edunao123_css_postprocess';

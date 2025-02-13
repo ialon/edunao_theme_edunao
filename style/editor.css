@@ -1,0 +1,8 @@
+/*
+* This is a hack. Do not modify.
+* When this class is included theme_edunao123_css_postprocess()
+* will add all the site CSS to the editor.
+*/
+.impossible-editor {
+    display: none;
+}
