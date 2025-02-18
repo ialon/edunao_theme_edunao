@@ -40,7 +40,7 @@ $string['restrict_preferences_desc'] = 'Supprime les liens vers la page des pré
 $string['restrict_my_certificates'] = 'Restreindre l\'accès à la page Mes Certificats';
 $string['restrict_my_certificates_desc'] = 'Redirige les utilisateurs vers la page Mon Profil s\'ils essaient d\'accéder directement à la page Mes Certificats (sauf les administrateurs)';
 $string['hide_breadcrumbs'] = 'Masquer les fil d\'Ariane';
-$string['hide_breadcrumbs_desc'] = 'Masquer les fil d\'Ariane dans l\'en-tête de la page de profil.';
+$string['hide_breadcrumbs_desc'] = 'Masquer les fil d\'Ariane dans le profil utilisateur et les pages d\'activité du cours.';
 $string['hide_mainnavbar'] = 'Masquer la barre de navigation principale';
 $string['hide_mainnavbar_desc'] = 'Masquer la barre de navigation principale dans l\'en-tête de la page.';
 

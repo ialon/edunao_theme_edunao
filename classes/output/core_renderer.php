@@ -37,7 +37,7 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
 
         $hide = get_config('theme_edunao123', 'hide_breadcrumbs');
 
-        if ($hide && str_contains($url, "/user/")) {
+        if ($hide && (str_contains($url, "/user/") || str_contains($url, "/mod/"))) {
             return '';
         } else {
             return parent::navbar();
