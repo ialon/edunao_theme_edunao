@@ -43,6 +43,8 @@ $string['hide_breadcrumbs'] = 'Hide breadcrumbs';
 $string['hide_breadcrumbs_desc'] = 'Hide breadcrumbs in the user profile and course activity pages.';
 $string['hide_mainnavbar'] = 'Hide main navigation bar';
 $string['hide_mainnavbar_desc'] = 'Hide the main navigation bar in the header of the page.';
+$string['hide_courseindex'] = 'Hide course index';
+$string['hide_courseindex_desc'] = 'Hide the course index drawer in activity pages.';
 
 // My certificates.
 $string['mycertificates'] = 'My certificates';

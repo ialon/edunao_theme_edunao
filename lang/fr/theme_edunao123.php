@@ -43,6 +43,8 @@ $string['hide_breadcrumbs'] = 'Masquer les fil d\'Ariane';
 $string['hide_breadcrumbs_desc'] = 'Masquer les fil d\'Ariane dans le profil utilisateur et les pages d\'activité du cours.';
 $string['hide_mainnavbar'] = 'Masquer la barre de navigation principale';
 $string['hide_mainnavbar_desc'] = 'Masquer la barre de navigation principale dans l\'en-tête de la page.';
+$string['hide_courseindex'] = 'Masquer l\'index du cours';
+$string['hide_courseindex_desc'] = 'Masquer le tiroir de l\'index du cours dans les pages d\'activité.';
 
 // Mes certificats.
 $string['mycertificates'] = 'Mes certificats';

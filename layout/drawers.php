@@ -104,7 +104,15 @@ $hasblocks = (strpos($blockshtml, 'data-block=') !== false || !empty($addblockbu
 if (!$hasblocks) {
     $blockdraweropen = false;
 }
+
 $courseindex = core_course_drawer();
+
+// Hide the course index in activity pages
+$hide = get_config('theme_edunao123', 'hide_courseindex');
+if ($hide && $PAGE->context->contextlevel == CONTEXT_MODULE) {
+    $courseindex = '';
+}
+
 if (!$courseindex) {
     $courseindexopen = false;
 }

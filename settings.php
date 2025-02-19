@@ -93,5 +93,13 @@ if (!during_initial_install() && $ADMIN->fulltree) {
     $page->add($setting);
 
 
+    // Hide course index drawer
+    $name = 'theme_edunao123/hide_courseindex';
+    $title = get_string('hide_courseindex', 'theme_edunao123');
+    $description = get_string('hide_courseindex_desc', 'theme_edunao123');
+    $setting = new admin_setting_configselect($name, $title, $description, 1, $yesnooption);
+    $page->add($setting);
+
+
     $settings->add($page);
 }
