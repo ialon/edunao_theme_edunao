@@ -203,7 +203,6 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
 
                 $hide = get_config('theme_edunao123', 'hide_secondarynavigation');
                 if ($hide) {
-
                     if (has_capability('moodle/course:manageactivities', $this->page->cm->context)) {
                         $editstring = get_string('edit', 'theme_edunao123');
                         $editurl = new moodle_url('/local/edai_course_editor/page_edition.php', array('update' => $this->page->cm->id));
@@ -217,9 +216,19 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
                         $editicon = $this->pix_icon('i/settings', $settingstring, 'core', ['class' => 'icon']);
                         $editicon = html_writer::link($editurl, $editicon, ['class' => 'btn btn-secondary edit-button', 'title' => $editstring]);
                     }
+
+                    // Allow plugins to add buttons to the context header.
+                    $pluginbuttons = '';
+                    if ($pluginsfunction = get_plugins_with_function('add_button_to_context_header')) {
+                        foreach ($pluginsfunction as $plugintype => $plugins) {
+                            foreach ($plugins as $pluginfunction) {
+                                $pluginbuttons .= $pluginfunction($this->page);
+                            }
+                        }
+                    }
                 }
 
-                $imagedata = $backicon . $courseicon . $pageediticon . $editicon;
+                $imagedata = $backicon . $courseicon . $pageediticon . $editicon . $pluginbuttons;
 
                 if (!empty($USER->editing)) {
                     $prefix = get_string('modulename', $this->page->activityname);
