@@ -55,3 +55,6 @@ $string['downloadcertificate'] = 'Download certificate';
 
 // Login page
 $string['potentialidps'] = 'Log in with:';
+
+// Navigation
+$string['back'] = 'Back';

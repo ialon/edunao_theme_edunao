@@ -334,6 +334,35 @@ body.format-edai .activity-information {
     padding-right: 1rem!important;
 }
 
+#page-header h1.h2 {
+    line-height: 52px;
+}
+
+.page-header-image .back-button {
+    font-weight: bold;
+    vertical-align: top;
+    border-radius: 52px;
+    margin-left: 5px;
+    margin-right: 15px;
+    padding: 10px 12px 2px 12px;
+}
+
+.page-header-image .course-button {
+    vertical-align: top;
+    border-radius: 52px;
+    margin-right: 5px;
+    padding: 10px 12px 2px 12px;
+}
+
+.page-header-image i {
+    font-size: 20px;
+    line-height: 26px;
+    vertical-align: -webkit-baseline-middle;
+    width: 26px;
+    height: 38px;
+    margin: 0;
+}
+
 
 
 /*

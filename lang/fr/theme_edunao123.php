@@ -55,3 +55,6 @@ $string['downloadcertificate'] = 'Télécharger le certificat';
 
 // Page de connexion
 $string['potentialidps'] = 'Se connecter avec:';
+
+// Navigation
+$string['back'] = 'Retour';
