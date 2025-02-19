@@ -45,6 +45,8 @@ $string['hide_mainnavbar'] = 'Masquer la barre de navigation principale';
 $string['hide_mainnavbar_desc'] = 'Masquer la barre de navigation principale dans l\'en-tête de la page.';
 $string['hide_courseindex'] = 'Masquer l\'index du cours';
 $string['hide_courseindex_desc'] = 'Masquer le tiroir de l\'index du cours dans les pages d\'activité.';
+$string['hide_secondarynavigation'] = 'Masquer la navigation secondaire';
+$string['hide_secondarynavigation_desc'] = 'Masquer le menu de navigation secondaire du cours dans les pages d\'activité.';
 
 // Mes certificats.
 $string['mycertificates'] = 'Mes certificats';
@@ -60,3 +62,5 @@ $string['potentialidps'] = 'Se connecter avec:';
 
 // Navigation
 $string['back'] = 'Retour';
+$string['edit'] = 'Éditer';
+$string['settings'] = 'Paramètres';

@@ -25,6 +25,7 @@
 namespace theme_edunao123\output;
 
 use html_writer;
+use moodle_url;
 
 class core_renderer extends \theme_boost_union\output\core_renderer {
     /**
@@ -39,7 +40,11 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
 
         $hide = get_config('theme_edunao123', 'hide_breadcrumbs');
 
-        if ($hide && (str_contains($url, "/user/") || str_contains($url, "/mod/"))) {
+        if ($hide && (
+                str_contains($url, "/user/") ||
+                str_contains($url, "/course/modedit") ||
+                str_contains($url, "/mod/")
+            )) {
             return '';
         } else {
             return parent::navbar();
@@ -188,11 +193,33 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
 
                 // Course icon to course view page.
                 $coursename = format_string($this->page->course->fullname, true, ['context' => $context]);
-                $courseurl = new \moodle_url('/course/view.php', ['id' => $this->page->course->id]);
+                $courseurl = new moodle_url('/course/view.php', ['id' => $this->page->course->id]);
                 $courseicon = $this->pix_icon('i/course', $coursename, 'core', ['class' => 'icon']);
                 $courseicon = html_writer::link($courseurl, $courseicon, ['class' => 'btn btn-primary course-button', 'title' => $coursename]);
 
-                $imagedata = $backicon . $courseicon;
+                // Edit activity button
+                $pageediticon = '';
+                $editicon = '';
+
+                $hide = get_config('theme_edunao123', 'hide_secondarynavigation');
+                if ($hide) {
+
+                    if (has_capability('moodle/course:manageactivities', $this->page->cm->context)) {
+                        $editstring = get_string('edit', 'theme_edunao123');
+                        $editurl = new moodle_url('/local/edai_course_editor/page_edition.php', array('update' => $this->page->cm->id));
+                        $pageediticon = $this->pix_icon('i/manual_item', $editstring, 'core', ['class' => 'icon']);
+                        $pageediticon = html_writer::link($editurl, $pageediticon, ['class' => 'btn btn-secondary edit-button', 'title' => $editstring]);
+                    }
+
+                    if (is_siteadmin()) {
+                        $settingstring = get_string('settings', 'theme_edunao123');
+                        $editurl = new moodle_url('/course/modedit.php', array('update' => $this->page->cm->id, 'return' => 1));
+                        $editicon = $this->pix_icon('i/settings', $settingstring, 'core', ['class' => 'icon']);
+                        $editicon = html_writer::link($editurl, $editicon, ['class' => 'btn btn-secondary edit-button', 'title' => $editstring]);
+                    }
+                }
+
+                $imagedata = $backicon . $courseicon . $pageediticon . $editicon;
 
                 if (!empty($USER->editing)) {
                     $prefix = get_string('modulename', $this->page->activityname);

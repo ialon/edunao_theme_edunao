@@ -338,20 +338,22 @@ body.format-edai .activity-information {
     line-height: 52px;
 }
 
-.page-header-image .back-button {
+.page-header-image .btn {
     font-weight: bold;
     vertical-align: top;
-    border-radius: 52px;
-    margin-left: 5px;
-    margin-right: 15px;
+    border-radius: 26px;
+    line-height: 26px;
+    margin-left: 10px;
     padding: 10px 12px 2px 12px;
 }
 
-.page-header-image .course-button {
-    vertical-align: top;
-    border-radius: 52px;
-    margin-right: 5px;
-    padding: 10px 12px 2px 12px;
+.page-header-image .edit-button {
+    margin-right: 10px;
+    float: right;
+}
+
+.pagelayout-admin .edit-button {
+    display: none !important;
 }
 
 .page-header-image i {
@@ -361,6 +363,20 @@ body.format-edai .activity-information {
     width: 26px;
     height: 38px;
     margin: 0;
+}
+
+.path-mod .page-context-header,
+.path-mod #page-header div.d-flex.align-items-center {
+    display: block !important;
+}
+
+.path-mod .page-header-headings,
+.path-mod .page-header-image {
+    width: 100%;
+}
+
+.path-mod .page-header-image {
+    margin-bottom: 20px;
 }
 
 

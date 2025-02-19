@@ -101,5 +101,13 @@ if (!during_initial_install() && $ADMIN->fulltree) {
     $page->add($setting);
 
 
+    // Hide course secondary navigation menu
+    $name = 'theme_edunao123/hide_secondarynavigation';
+    $title = get_string('hide_secondarynavigation', 'theme_edunao123');
+    $description = get_string('hide_secondarynavigation_desc', 'theme_edunao123');
+    $setting = new admin_setting_configselect($name, $title, $description, 1, $yesnooption);
+    $page->add($setting);
+
+
     $settings->add($page);
 }

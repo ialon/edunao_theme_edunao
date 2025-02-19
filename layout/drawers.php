@@ -131,6 +131,17 @@ if ($PAGE->has_secondary_navigation()) {
     }
 }
 
+// Check if page is /course/modedit.php
+$url = $_SERVER['PHP_SELF'];
+$ismodedit = str_contains($url, "/course/modedit");
+
+// Hide the secondary navigation menu in activity pages
+$hide = get_config('theme_edunao123', 'hide_secondarynavigation');
+$isediting = is_siteadmin() && $ismodedit;
+if ($hide && !$isediting && $PAGE->context->contextlevel == CONTEXT_MODULE) {
+    $secondarynavigation = false;
+}
+
 // Load the navigation from edunao123 primary navigation, the extended version of boost_union primary navigation.
 // It includes the smart menus and menu items, for multiple locations.
 $primary = new theme_edunao123\output\navigation\primary($PAGE);
