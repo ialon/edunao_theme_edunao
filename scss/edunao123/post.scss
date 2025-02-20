@@ -334,53 +334,31 @@ body.format-edai .activity-information {
     padding-right: 1rem!important;
 }
 
-#page-header h1.h2 {
-    line-height: 52px;
+.path-mod .page-header-headings,
+.path-mod .page-header-image {
+    display: inline-flex;
 }
 
 .page-header-image .btn {
-    font-weight: bold;
-    vertical-align: top;
-    border-radius: 26px;
-    line-height: 26px;
-    margin-left: 10px;
+    border-radius: 23px;
+    height: 46px;
+    margin-left: 12px;
     padding: 10px 12px 2px 12px;
 }
 
-.page-header-image .edit-button {
-    margin-right: 10px;
-    float: right;
+.page-header-image i {
+    font-size: 18px;
+    width: 20px;
+    margin: 0;
 }
 
 .pagelayout-admin .edit-button {
     display: none !important;
 }
 
-.page-header-image i {
-    font-size: 20px;
-    line-height: 26px;
-    vertical-align: -webkit-baseline-middle;
-    width: 26px;
-    height: 38px;
-    margin: 0;
-    max-width: 52px;
-    max-height: 52px;
-}
-
-.path-mod .page-context-header,
-.path-mod #page-header div.d-flex.align-items-center {
+.path-mod #page-header .d-flex.align-items-center {
     display: block !important;
 }
-
-.path-mod .page-header-headings,
-.path-mod .page-header-image {
-    width: 100%;
-}
-
-.path-mod .page-header-image {
-    margin-bottom: 20px;
-}
-
 
 
 /*
