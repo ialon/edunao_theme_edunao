@@ -194,27 +194,19 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
                 $courseicon = html_writer::link($courseurl, $courseicon, ['class' => 'btn btn-primary course-button', 'title' => $coursename]);
 
                 // Edit activity button
-                $pageediticon = '';
                 $editicon = '';
+                $pluginbuttons = '';
 
                 $hide = get_config('theme_edunao123', 'hide_secondarynavigation');
                 if ($hide) {
-                    if (has_capability('moodle/course:manageactivities', $this->page->cm->context)) {
-                        $editstring = get_string('edit', 'theme_edunao123');
-                        $editurl = new moodle_url('/local/edai_course_editor/page_edition.php', array('update' => $this->page->cm->id));
-                        $pageediticon = $this->pix_icon('i/manual_item', $editstring, 'core', ['class' => 'icon']);
-                        $pageediticon = html_writer::link($editurl, $pageediticon, ['class' => 'btn btn-secondary edit-button', 'title' => $editstring]);
-                    }
-
                     if (is_siteadmin()) {
                         $settingstring = get_string('settings', 'theme_edunao123');
                         $editurl = new moodle_url('/course/modedit.php', array('update' => $this->page->cm->id, 'return' => 1));
                         $editicon = $this->pix_icon('i/settings', $settingstring, 'core', ['class' => 'icon']);
-                        $editicon = html_writer::link($editurl, $editicon, ['class' => 'btn btn-secondary edit-button', 'title' => $editstring]);
+                        $editicon = html_writer::link($editurl, $editicon, ['class' => 'btn btn-secondary edit-button', 'title' => $settingstring]);
                     }
 
                     // Allow plugins to add buttons to the context header.
-                    $pluginbuttons = '';
                     if ($pluginsfunction = get_plugins_with_function('add_button_to_context_header')) {
                         foreach ($pluginsfunction as $plugintype => $plugins) {
                             foreach ($plugins as $pluginfunction) {
@@ -224,7 +216,7 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
                     }
                 }
 
-                $imagedata = $courseicon . $pageediticon . $editicon . $pluginbuttons;
+                $imagedata = $courseicon . $editicon . $pluginbuttons;
 
                 if (!empty($USER->editing)) {
                     $prefix = get_string('modulename', $this->page->activityname);
