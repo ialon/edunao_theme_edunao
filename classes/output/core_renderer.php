@@ -199,7 +199,7 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
 
                 $hide = get_config('theme_edunao123', 'hide_secondarynavigation');
                 if ($hide) {
-                    if (is_siteadmin()) {
+                    if (has_capability('moodle/course:manageactivities', $this->page->cm->context)) {
                         $settingstring = get_string('settings', 'theme_edunao123');
                         $editurl = new moodle_url('/course/modedit.php', array('update' => $this->page->cm->id, 'return' => 1));
                         $editicon = $this->pix_icon('i/settings', $settingstring, 'core', ['class' => 'icon']);
