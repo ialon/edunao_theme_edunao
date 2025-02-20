@@ -137,7 +137,7 @@ $ismodedit = str_contains($url, "/course/modedit");
 
 // Hide the secondary navigation menu in activity pages
 $hide = get_config('theme_edunao123', 'hide_secondarynavigation');
-$isediting = is_siteadmin() && $ismodedit;
+$isediting = $PAGE->user_is_editing() && $ismodedit;
 if ($hide && !$isediting && $PAGE->context->contextlevel == CONTEXT_MODULE) {
     $secondarynavigation = false;
 }

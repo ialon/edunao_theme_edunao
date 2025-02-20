@@ -360,6 +360,15 @@ body.format-edai .activity-information {
     display: block !important;
 }
 
+body:not(.editing) .path-mod .page-context-header {
+    margin-bottom: 25px;
+}
+
+.path-mod .page-header-headings .text-muted {
+    display: none;
+}
+
+
 
 /*
 *   LINK TO LEARNING KPI HACK
