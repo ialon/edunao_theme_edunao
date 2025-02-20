@@ -187,10 +187,6 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
                     'aria-hidden' => 'true'
                 ];
 
-                // Back navigation button
-                $backicon = $this->pix_icon('t/left', get_string('back', 'theme_edunao123'), 'core', ['class' => 'icon mr-1']);
-                $backicon = html_writer::link('#', $backicon . get_string('back', 'theme_edunao123'), ['class' => 'btn btn-secondary back-button', 'onclick' => 'history.back()']);
-
                 // Course icon to course view page.
                 $coursename = format_string($this->page->course->fullname, true, ['context' => $context]);
                 $courseurl = new moodle_url('/course/view.php', ['id' => $this->page->course->id]);
@@ -228,7 +224,7 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
                     }
                 }
 
-                $imagedata = $backicon . $courseicon . $pageediticon . $editicon . $pluginbuttons;
+                $imagedata = $courseicon . $pageediticon . $editicon . $pluginbuttons;
 
                 if (!empty($USER->editing)) {
                     $prefix = get_string('modulename', $this->page->activityname);
