@@ -334,9 +334,22 @@ body.format-edai .activity-information {
     padding-right: 1rem!important;
 }
 
+#page-header .mr-auto {
+    width: 100%;
+}
+
+#page-header .page-context-header {
+    display: block;
+}
+
+.path-mod #page-header .page-context-header,
 .path-mod .page-header-headings,
 .path-mod .page-header-image {
     display: inline-flex;
+}
+
+.page-header-headings .text-muted {
+    display: none;
 }
 
 .page-header-image .btn {
@@ -354,18 +367,6 @@ body.format-edai .activity-information {
 
 .pagelayout-admin .edit-button {
     display: none !important;
-}
-
-.path-mod #page-header .d-flex.align-items-center {
-    display: block !important;
-}
-
-body:not(.editing) .path-mod .page-context-header {
-    margin-bottom: 25px;
-}
-
-.path-mod .page-header-headings .text-muted {
-    display: none;
 }
 
 

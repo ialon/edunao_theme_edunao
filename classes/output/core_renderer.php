@@ -244,14 +244,14 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
        }
 
        // All the html stuff goes here.
-       $html = html_writer::start_div('page-context-header justify-content-between');
+       $html = html_writer::start_div('page-context-header justify-content-between w-100');
 
        // Headings.
        if (isset($contextheader->prefix)) {
            $prefix = html_writer::div($contextheader->prefix, 'text-muted text-uppercase small line-height-3');
            $heading = $prefix . $heading;
        }
-       $html .= html_writer::tag('div', $heading, array('class' => 'page-header-headings'));
+       $html .= html_writer::tag('div', $heading, array('class' => 'page-header-headings d-inline-flex'));
 
        // Image data.
        if (isset($contextheader->imagedata)) {
