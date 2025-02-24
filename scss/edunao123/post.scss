@@ -402,6 +402,10 @@ body.format-edai .activity-information {
 #page-user-edit #id_moodle_interests,
 /* Hide Optional section. */
 #page-user-edit #id_moodle_optional,
+/* Hide Whatsapp section. */
+#page-user-edit #id_category_3,
+#page-user-edit #id_profile_field_whatsapp,
+#page-user-edit #id_error_profile_field_whatsapp_enable,
 .nodisplay { /* The .nodisplay class is just a placeholder. */
     display: none !important;
 }
