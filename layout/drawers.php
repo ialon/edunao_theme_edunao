@@ -131,13 +131,9 @@ if ($PAGE->has_secondary_navigation()) {
     }
 }
 
-// Check if page is /course/modedit.php
-$url = $_SERVER['PHP_SELF'];
-$ismodedit = str_contains($url, "/course/modedit");
-
 // Hide the secondary navigation menu in activity pages
 $hide = get_config('theme_edunao123', 'hide_secondarynavigation');
-$isediting = $PAGE->user_is_editing() && $ismodedit;
+$isediting = $PAGE->user_is_editing();
 if ($hide && !$isediting && $PAGE->context->contextlevel == CONTEXT_MODULE) {
     $secondarynavigation = false;
 }
